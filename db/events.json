@@ -1,0 +1,18 @@
+[
+    {
+        "ID": 1,
+        "Name": "Compleanno di Anna",
+        "Location": "Roma",
+        "Date": "2025-01-25",
+        "Time": "18:00",
+        "Guests": ["Luca Rossi", "Mario Bianchi"]
+    },
+    {
+        "ID": 2,
+        "Name": "Meeting Aziendale",
+        "Location": "Milano",
+        "Date": "2025-02-01",
+        "Time": "10:00",
+        "Guests": ["Giulia Bianchi", "Paolo Neri"]
+    }
+]
