@@ -20,16 +20,5 @@
             "Giulia Bianchi",
             "Paolo Neri"
         ]
-    },
-    {
-        "ID": 3,
-        "Name": "School Meeting",
-        "Location": "Casalmaggiore",
-        "Date": "2025-01-22",
-        "Time": "09:52",
-        "Guests": [
-            "Singh Inderpreet",
-            "Singh Harshdeep"
-        ]
     }
 ]

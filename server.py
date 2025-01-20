@@ -64,6 +64,8 @@ def add_event():
         with open(EVENTS_DB, 'w') as file:
             json.dump(events, file, indent=4)
         
+        return redirect('/')
+        
     return render_template("add_event.html")
 
 @app.route("/edit/<int:event_id>", methods=["GET", "POST"])
@@ -71,7 +73,6 @@ def edit_event(event_id):
     with open(EVENTS_DB, "r") as file:
         events = json.load(file)
         
-    modify_event = None
     for event in events:
         if int(event["ID"]) == event_id:
             modify_event = event
@@ -87,7 +88,24 @@ def edit_event(event_id):
         with open(EVENTS_DB, 'w') as file:
             json.dump(events, file, indent=4)
         
+        return redirect('/')
+        
     return render_template("edit_event.html", event = modify_event)
+
+@app.route("/delete/<int:event_id>", methods=["POST"])
+def delete_event(event_id):
+    with open(EVENTS_DB, "r") as file:
+        events = json.load(file)
+        
+    new_events = []
+    for event in events:
+        if int(event["ID"]) != event_id:
+            new_events.append(event)
+        
+    with open(EVENTS_DB, 'w') as file:
+        json.dump(new_events, file, indent=4)
+            
+    return redirect('/')
 
 if __name__ == "__main__":
     app.run(debug=True)
