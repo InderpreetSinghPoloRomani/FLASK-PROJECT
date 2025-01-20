@@ -7,10 +7,10 @@
     <title>Planned Events</title>
 </head>
 <body>
-    <div>
-    <h2>Planned Events</h2>
-    <a href="/add">Add Event</a>
-    <table>
+    <div class="container mt-5">
+    <h2 class="text-center">Planned Events</h2>
+    <a href="/add" class="btn btn-success mb-3" >Add Event</a>
+    <table class="table table-striped">
     <thead>
     <tr>
         <th>Name</th>
@@ -29,12 +29,14 @@
             <td>{{ event['Date']}}</td>
             <td>{{ event['Time']}}</td>
             <td>{{ ', '.join(event['Guests'])}}</td>
-            <form action="/edit/{{ event['ID']}}" method="post">
-                <button type="submit">Edit</button>
+            <td>
+                <form action="/edit/{{ event['ID']}}" method="post" style="display: inline;">
+                    <button type="submit" class="btn btn-warning mb-3">Edit</button>
+                </form>
+                <form action="/delete/{{ event['ID']}}" method="post" style="display: inline;">
+                    <button type="submit" class="btn btn-danger mb-3">Delete</button>
             </form>
-            <form action="/delete/{{ event['ID']}}" method="post">
-                <button type="submit">Delete</button>
-            </form>
+            </td>
         </tr>
         {% endfor %}
     </tbody>
