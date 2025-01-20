@@ -6,6 +6,38 @@
     <title>Planned Events</title>
 </head>
 <body>
-    <h1>Hello World!!</h1>
+    <div>
+    <h2>Planned Events</h2>
+    <a href="/add">Add Event</a>
+    <table>
+    <thead>
+    <tr>
+        <th>Nome</th>
+        <th>Luogo</th>
+        <th>Data</th>
+        <th>Orario</th>
+        <th>Invitati</th>
+        <th>Azioni</th>
+    </tr>
+    </thead>
+    <tbody>
+        {% for event in events%}
+        <tr>
+            <td>{{ event['name']}}</td>
+            <td>{{ event['Location']}}</td>
+            <td>{{ event['Date']}}</td>
+            <td>{{ event['Time']}}</td>
+            <td>{{ ', '.join(event['Guests'])}}</td>
+            <form action="/edit/{{ event['ID']}}" method="post">
+                <button type="submit">Edit</button>
+            </form>
+            <form action="/delete/{{ event['ID']}}" method="post">
+                <button type="submit">Delete</button>
+            </form>
+        </tr>
+        {% endfor %}
+    </tbody>
+    </table>
+</div>
 </body>
 </html>
