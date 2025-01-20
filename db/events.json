@@ -5,7 +5,10 @@
         "Location": "Roma",
         "Date": "2025-01-25",
         "Time": "18:00",
-        "Guests": ["Luca Rossi", "Mario Bianchi"]
+        "Guests": [
+            "Luca Rossi",
+            "Mario Bianchi"
+        ]
     },
     {
         "ID": 2,
@@ -13,6 +16,20 @@
         "Location": "Milano",
         "Date": "2025-02-01",
         "Time": "10:00",
-        "Guests": ["Giulia Bianchi", "Paolo Neri"]
+        "Guests": [
+            "Giulia Bianchi",
+            "Paolo Neri"
+        ]
+    },
+    {
+        "ID": 3,
+        "Name": "School Meeting",
+        "Location": "Casalmaggiore",
+        "Date": "2025-01-22",
+        "Time": "09:52",
+        "Guests": [
+            "Singh Inderpreet",
+            " Singh Harshdeep"
+        ]
     }
 ]

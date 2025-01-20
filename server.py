@@ -44,5 +44,27 @@ def index():
     
     return render_template("index.html", events=events)
 
+@app.route("/add", methods=["GET", "POST"])
+def add_event():
+    if request.method == 'POST':
+        with open(EVENTS_DB, "r") as file:
+            events = json.load(file)
+            
+        new_event = Event(
+            event_id=len(events) + 1,
+            name=request.form["name"],
+            location=request.form["location"],
+            date=request.form["date"],
+            time=request.form["time"],
+            guests=request.form["guests"].split(",")
+        )
+        
+        events.append(new_event.__dict__)
+        
+        with open(EVENTS_DB, 'w') as file:
+            json.dump(events, file, indent=4)
+        
+    return render_template("add_event.html")
+
 if __name__ == "__main__":
     app.run(debug=True)
