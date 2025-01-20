@@ -12,18 +12,18 @@
     <table>
     <thead>
     <tr>
-        <th>Nome</th>
-        <th>Luogo</th>
-        <th>Data</th>
-        <th>Orario</th>
-        <th>Invitati</th>
-        <th>Azioni</th>
+        <th>Name</th>
+        <th>Location</th>
+        <th>Date</th>
+        <th>Time</th>
+        <th>Guests</th>
+        <th>Actions</th>
     </tr>
     </thead>
     <tbody>
         {% for event in events%}
         <tr>
-            <td>{{ event['name']}}</td>
+            <td>{{ event['Name']}}</td>
             <td>{{ event['Location']}}</td>
             <td>{{ event['Date']}}</td>
             <td>{{ event['Time']}}</td>
