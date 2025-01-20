@@ -30,7 +30,7 @@
             <td>{{ event['Time']}}</td>
             <td>{{ ', '.join(event['Guests'])}}</td>
             <td>
-                <form action="/edit/{{ event['ID']}}" method="post" style="display: inline;">
+                <form action="/edit/{{ event['ID']}}" method="get" style="display: inline;">
                     <button type="submit" class="btn btn-warning mb-3">Edit</button>
                 </form>
                 <form action="/delete/{{ event['ID']}}" method="post" style="display: inline;">
