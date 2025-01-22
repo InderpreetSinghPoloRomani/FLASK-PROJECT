@@ -9,7 +9,7 @@
 <body>
     <div class="container mt-5">
     <h2 class="text-center">Planned Events</h2>
-    <a href="/add" class="btn btn-success mb-3" >Add Event</a>
+    <a href="/add" class="btn btn-success mb-3">Add Event</a>
     <table class="table table-striped">
     <thead>
     <tr>
@@ -22,18 +22,18 @@
     </tr>
     </thead>
     <tbody>
-        {% for event in events%}
+        {% for event in events %}
         <tr>
-            <td>{{ event['Name']}}</td>
-            <td>{{ event['Location']}}</td>
-            <td>{{ event['Date']}}</td>
-            <td>{{ event['Time']}}</td>
-            <td>{{ ', '.join(event['Guests'])}}</td>
+            <td>{{ event['Name'] }}</td>
+            <td>{{ event['Location'] }}</td>
+            <td>{{ event['Date'] }}</td>
+            <td>{{ event['Time'] }}</td>
+            <td>{{ ', '.join(event['Guests']) }}</td>
             <td>
-                <form action="/edit/{{ event['ID']}}" method="post" style="display: inline;">
+                <form action="/edit/{{ event['ID'] }}" method="get" style="display: inline;">
                     <button type="submit" class="btn btn-warning mb-3">Edit</button>
                 </form>
-                <form action="/delete/{{ event['ID']}}" method="post" style="display: inline;">
+                <form action="/delete/{{ event['ID'] }}" method="post" style="display: inline;" onsubmit="return confirmDelete();">
                     <button type="submit" class="btn btn-danger mb-3">Delete</button>
             </form>
             </td>
@@ -42,5 +42,11 @@
     </tbody>
     </table>
 </div>
+<script>
+    function confirmDelete()
+    {
+        return confirm("Are you sure you want to delete this event?");
+    }
+</script>
 </body>
 </html>

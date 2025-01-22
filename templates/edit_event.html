@@ -9,11 +9,8 @@
 </head>
 <body>
     <div class="container mt-5">
-        <h2 class="text-center">Edit Event</h2>
-        <div id="error-message" class="alert alert-danger" style="display: none;">
-            Please fill out all fields
-        </div>
-        <form action="/edit/{{event['ID']}}" id="edit-event-form" method="post">
+        <h2>Edit a Planned Event</h2>
+        <form action="/edit/{{event['ID']}}" method="post">
             <div class="mb-3">
                 <label for="name" class="form-label">Event Name</label>
                 <input type="text" class="form-control" id="name" name="name" value="{{event['Name']}}" required>
