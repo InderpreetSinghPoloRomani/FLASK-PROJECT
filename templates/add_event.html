@@ -12,14 +12,17 @@
 <body>
     <div class="container mt-5">
         <h2 class="text-center">Add a New Event</h2>
-        <form action="/add" method="post"> 
+        <div id="error-message" class="alert alert-danger" style="display: none;">
+            Please fill out all fields
+        </div>
+        <form action="/add" id="add-event-form" method="post"> 
             <div class="mb-3">
                 <label for="name" class="form-label">Event Name</label>
-                <input type="text" class="form-control" id="name" name="name" required>
+                <input type="text" class="form-control" id="name" name="name" placeholder="Enter the event" required>
             </div>
             <div class="mb-3">
                 <label for="Location" class="form-label">Place</label>
-                <input type="text" class="form-control" id="location" name ="location" required>
+                <input type="text" class="form-control" id="location" name ="location" placeholder="Enter the event location" required>
             </div>
             <div class="mb-3">
                 <label for="date" class="form-label">Date</label>
@@ -31,7 +34,7 @@
             </div>
             <div>
                 <label for="guests" class="form-label">Guests (separated by a comma)</label>
-                <input type="text" class="form-control" id="guests" name="guests" required>
+                <input type="text" class="form-control" id="guests" name="guests"  required>
             </div>
             <button type="submit" class="btn btn-primary">Add Event</button>
         </form>
