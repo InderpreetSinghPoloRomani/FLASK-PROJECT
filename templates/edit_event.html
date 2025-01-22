@@ -34,5 +34,21 @@
             <button type="submit" class="btn btn-primary">Save Edit</button>
         </form>
     </div>
+    <script>
+        document.getElementById("edit-vent_form").addEventListener("submit",function(event){
+            const name = document.getElementById("name").value;
+            const location = document.getElementById("location").value;
+            const date = document.getElementById("date").value;
+            const time = document.getElementById("time").value;
+            const guests = document.getElementById("guests").value;
+
+
+            if (!name || !location || !date || !time || !guests) {
+                event.preventDefault(); 
+                document.getElementById("error-message").style.display = "block"; 
+            }
+
+        });
+    </script>
 </body>
 </html>

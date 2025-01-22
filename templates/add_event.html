@@ -36,5 +36,20 @@
             <button type="submit" class="btn btn-primary">Add Event</button>
         </form>
     </div>
+    <script>
+        document.getElementById("add-event-form").addEventListener("submit",function(event){
+            const name = decument.getElementById("name").value;
+            const location = document.getElementById("location").value;
+            const date = document.getElementById("date").value;
+            const time = document.getElementById("time").value;
+            const guests = document.getElementById("guests").value;
+
+            if(!name || !location || !date || !time || !guests){
+                event.preventDefault();
+                document.getElementById("error-message").style.display = "block";
+            }
+
+        });
+    </script>
 </body>
 </html>
