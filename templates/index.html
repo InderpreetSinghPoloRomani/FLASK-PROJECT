@@ -5,48 +5,100 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Planned Events</title>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+
+        .d-flex {
+            display: flex;
+            min-height: 100%;
+            flex-direction: row;
+            flex-wrap: nowrap;
+        }
+
+        main {
+            flex-grow: 1;
+            padding-bottom: 70px; 
+        }
+
+        footer {
+            width: 100%;
+            position: relative;
+            bottom: 0;
+        }
+    </style>
 </head>
 <body>
-    <div class="container mt-5">
-    <h2 class="text-center">Planned Events</h2>
-    <a href="/add" class="btn btn-success mb-3">Add Event</a>
-    <table class="table table-striped">
-    <thead>
-    <tr>
-        <th>Name</th>
-        <th>Location</th>
-        <th>Date</th>
-        <th>Time</th>
-        <th>Guests</th>
-        <th>Actions</th>
-    </tr>
-    </thead>
-    <tbody>
-        {% for event in events %}
-        <tr>
-            <td>{{ event['Name'] }}</td>
-            <td>{{ event['Location'] }}</td>
-            <td>{{ event['Date'] }}</td>
-            <td>{{ event['Time'] }}</td>
-            <td>{{ ', '.join(event['Guests']) }}</td>
-            <td>
-                <form action="/edit/{{ event['ID'] }}" method="get" style="display: inline;">
-                    <button type="submit" class="btn btn-warning mb-3">Edit</button>
-                </form>
-                <form action="/delete/{{ event['ID'] }}" method="post" style="display: inline;" onsubmit="return confirmDelete();">
-                    <button type="submit" class="btn btn-danger mb-3">Delete</button>
+    <header class="bg-primary text-white text-center py-3">
+        <h1>Event Planner</h1>
+    </header>
+    <div class="d-flex">
+        <aside class="bg-light p-3" style="width: 250px;">
+            <h4>Filter Events</h4>
+            <form action="/filter" method="get">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Event Name</label>
+                    <input type="text" class="form-control" id="name" name="name">
+                </div>
+                <div class="mb-3">
+                    <label for="location" class="form-label">Location</label>
+                    <input type="text" class="form-control" id="location" name="location">
+                </div>
+                <div class="mb-3">
+                    <label for="date" class="form-label">Date</label>
+                    <input type="date" class="form-control" id="date" name="date">
+                </div>
+                <button type="submit" class="btn btn-primary">Search</button>
             </form>
-            </td>
-        </tr>
-        {% endfor %}
-    </tbody>
-    </table>
-</div>
-<script>
-    function confirmDelete()
-    {
-        return confirm("Are you sure you want to delete this event?");
-    }
-</script>
+        </aside>
+        
+        <main class="container mt-5">
+            <h2 class="text-center">Planned Events</h2>
+            <a href="/add" class="btn btn-success mb-3">Add Event</a>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Location</th>
+                        <th>Date</th>
+                        <th>Time</th>
+                        <th>Guests</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for event in events %}
+                    <tr>
+                        <td>{{ event['Name'] }}</td>
+                        <td>{{ event['Location'] }}</td>
+                        <td>{{ event['Date'] }}</td>
+                        <td>{{ event['Time'] }}</td>
+                        <td>{{ ', '.join(event['Guests']) }}</td>
+                        <td>
+                            <form action="/edit/{{ event['ID'] }}" method="get" style="display: inline;">
+                                <button type="submit" class="btn btn-warning mb-3">Edit</button>
+                            </form>
+                            <form action="/delete/{{ event['ID'] }}" method="post" style="display: inline;" onsubmit="return confirmDelete();">
+                                <button type="submit" class="btn btn-danger mb-3">Delete</button>
+                            </form>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </main>
+    </div>
+    
+    <footer class="bg-dark text-white text-center py-3">
+        <p>&copy; 2025 Event Planner. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function confirmDelete() {
+            return confirm("Are you sure you want to delete this event?");
+        }
+    </script>
 </body>
 </html>
