@@ -7,7 +7,7 @@
         "Time": "18:00",
         "Guests": [
             "Luca Rossi",
-            " Mario Bianchi"
+            "Mario Bianchi"
         ]
     },
     {
@@ -19,6 +19,97 @@
         "Guests": [
             "Giulia Bianchi",
             "Paolo Neri"
+        ]
+    },
+    {
+        "ID": 3,
+        "Name": "Festa in Piscina",
+        "Location": "Napoli",
+        "Date": "2025-07-18",
+        "Time": "16:00",
+        "Guests": [
+            "Francesca Verdi",
+            "Luigi Gialli",
+            "Alessia Blu"
+        ]
+    },
+    {
+        "ID": 4,
+        "Name": "Concerto Jazz",
+        "Location": "Torino",
+        "Date": "2025-04-20",
+        "Time": "20:30",
+        "Guests": [
+            "Elena Arancio",
+            "Roberto Viola"
+        ]
+    },
+    {
+        "ID": 5,
+        "Name": "Workshop di Fotografia",
+        "Location": "Firenze",
+        "Date": "2025-05-05",
+        "Time": "09:00",
+        "Guests": [
+            "Andrea Marrone",
+            "Giovanni Nero",
+            "Chiara Rosa"
+        ]
+    },
+    {
+        "ID": 6,
+        "Name": "Fiera del Libro",
+        "Location": "Bologna",
+        "Date": "2025-06-10",
+        "Time": "11:00",
+        "Guests": [
+            "Sara Celeste",
+            "Marta Azzurri"
+        ]
+    },
+    {
+        "ID": 7,
+        "Name": "Serata Karaoke",
+        "Location": "Genova",
+        "Date": "2025-07-18",
+        "Time": "19:00",
+        "Guests": [
+            "Federico Grigio",
+            "Martina Bianca"
+        ]
+    },
+    {
+        "ID": 8,
+        "Name": "Esposizione d'Arte",
+        "Location": "Venezia",
+        "Date": "2025-08-12",
+        "Time": "11:00",
+        "Guests": [
+            "Giulia Acqua",
+            "Lorenzo Verde"
+        ]
+    },
+    {
+        "ID": 9,
+        "Name": "Festival del Cinema",
+        "Location": "Roma",
+        "Date": "2025-09-05",
+        "Time": "18:00",
+        "Guests": [
+            "Marina Blu",
+            "Carlo Gialli"
+        ]
+    },
+    {
+        "ID": 10,
+        "Name": "Cena di Gala",
+        "Location": "Roma",
+        "Date": "2025-12-31",
+        "Time": "20:00",
+        "Guests": [
+            "Luca Rossi",
+            "Giulia Bianchi",
+            "Francesca Verdi"
         ]
     }
 ]

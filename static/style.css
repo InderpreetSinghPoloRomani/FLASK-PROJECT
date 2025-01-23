@@ -20,7 +20,7 @@ html, body {
 
 main {
     flex-grow: 1;
-    padding-bottom: 70px; /* spazio per il footer */
+    padding-bottom: 70px;
 }
 
 footer {

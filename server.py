@@ -107,5 +107,27 @@ def delete_event(event_id):
             
     return redirect('/')
 
+@app.route("/filter", methods=["GET", "POST"])
+def filter_event():
+    with open(EVENTS_DB, "r") as file:
+        events = json.load(file)
+        
+    if request.method == 'POST': 
+        name = request.form["name"]
+        location = request.form["location"]
+        date = request.form["date"]
+        time = request.form["time"]
+        
+        if name:
+            events = [event for event in events if name.lower() in event['Name'].lower()]
+        if location:
+            events = [event for event in events if location.lower() in event['Location'].lower()]
+        if date:
+            events = [event for event in events if date == event['Date']]
+        if time:
+            events = [event for event in events if time == event['Time']]
+    
+    return render_template("index.html", events = events)
+
 if __name__ == "__main__":
     app.run(debug=True)

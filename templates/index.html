@@ -14,7 +14,7 @@
     <div class="d-flex">
         <aside class="bg-light p-3" style="width: 325px; outline: 2px dashed black; margin: 10px;">
             <h4>Filter Events</h4>
-            <form action="/filter" method="get">
+            <form action="/filter" method="post">
                 <div class="mb-3">
                     <label for="name" class="form-label">Event Name</label>
                     <input type="text" class="form-control" id="name" name="name">
@@ -26,6 +26,10 @@
                 <div class="mb-3">
                     <label for="date" class="form-label">Date</label>
                     <input type="date" class="form-control" id="date" name="date">
+                </div>
+                <div class="mb-3">
+                    <label for="date" class="form-label">Event Time</label>
+                    <input type="time" class="form-control" id="time" name="time">
                 </div>
                 <button type="submit" class="btn btn-primary">Search</button>
             </form>
