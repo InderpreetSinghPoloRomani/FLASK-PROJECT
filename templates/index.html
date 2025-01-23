@@ -5,37 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Planned Events</title>
-    <style>
-        html, body {
-            height: 100%;
-            margin: 0;
-        }
-
-        .d-flex {
-            display: flex;
-            min-height: 100%;
-            flex-direction: row;
-            flex-wrap: nowrap;
-        }
-
-        main {
-            flex-grow: 1;
-            padding-bottom: 70px; 
-        }
-
-        footer {
-            width: 100%;
-            position: relative;
-            bottom: 0;
-        }
-    </style>
+    <link rel="stylesheet" href="../static/style.css">
 </head>
 <body>
     <header class="bg-primary text-white text-center py-3">
         <h1>Event Planner</h1>
     </header>
     <div class="d-flex">
-        <aside class="bg-light p-3" style="width: 250px;">
+        <aside class="bg-light p-3" style="width: 325px; outline: 2px dashed black; margin: 10px;">
             <h4>Filter Events</h4>
             <form action="/filter" method="get">
                 <div class="mb-3">
