@@ -8,6 +8,10 @@
     <link rel="stylesheet" href="../static/style.css">
 </head>
 <body>
+    <header class="bg-primary text-white text-center py-3">
+        <h1>Event Planner</h1>
+    </header>
+    <button onclick="window.location.href='/';" class="btn btn-secondary mt-3 ms-3">Back to Home</button>
     <div class="container mt-5">
         <h2>Edit a Planned Event</h2>
         <form action="/edit/{{event['ID']}}" method="post">
@@ -34,5 +38,8 @@
             <button type="submit" class="btn btn-primary">Save Edit</button>
         </form>
     </div>
+    <footer class="bg-dark text-white text-center py-3 mt-5">
+        <p>&copy; 2025 Event Planner. All rights reserved.</p>
+    </footer>
 </body>
 </html>
